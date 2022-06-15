@@ -1,16 +1,38 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* 
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: white;
+  width: 60px;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  width: 100px;
+  height: 100px;
+} */
+
+/* .swiper-pagination {
+  font-size: 0.8rem;
+} */
+
+/* .splide__arrow {
+  background-color: #fff !important;
+  opacity: 0.75 !important;
+  transition: opacity 100ms;
 }
 
-* {
-  box-sizing: border-box;
+.splide__arrow:hover {
+  opacity: 1 !important;
+}
+
+.splide__arrow:disabled {
+  background-color: #fff !important;
+  opacity: 0.3 !important;
+} */
+
+button.splide__pagination__page.is-active {
+  background-color: #cb5b3f;
 }
