@@ -13,7 +13,7 @@ const CopyToClipboardText = ({ text }: CopyToClipboardTextProps) => {
       }}
       text={text}
     >
-      <div className="flex cursor-pointer items-center justify-between rounded-lg bg-neutral px-4 py-2   hover:scale-105">
+      <div className="flex cursor-pointer items-center justify-between rounded-lg bg-neutral px-4 py-2   hover:scale-105 hover:shadow-sm">
         <div className="">{text}</div>
         {isCopied ? (
           <div className="text-sm text-black opacity-40">Copied!</div>

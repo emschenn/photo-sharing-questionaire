@@ -8,7 +8,7 @@ type ButtonProps = {
 
 const Button = ({ text, disabled = false, onClick }: ButtonProps) => {
   return (
-    <div className="flex w-full justify-center pb-6">
+    <div className="flex w-full justify-center">
       <button
         disabled={disabled}
         onClick={onClick}

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
-import { ThreeDots } from "svg-loaders-react";
 import { QuestionInterface } from "../interfaces/question";
 import { shuffle } from "../utils/shuffleArray";
 import Button from "./Button";
+import LoadingIndicator from "./LoadingIndicator";
 
 type AnswerPanelProps = {
   question: QuestionInterface;
@@ -41,31 +41,33 @@ const AnswerPanel = ({ question, next }: AnswerPanelProps) => {
   }, [question]);
 
   return (
-    <div className="pt-4">
-      <h2>
+    <div className="py-8">
+      <h2 className="px-8  pb-2">
         <b>Click</b> to select the photo set you want to share when you want to
         tell others about how you spent the day.
       </h2>
       {options != null ? (
-        <div className="flex flex-col items-center justify-center pt-2 pb-4  md:flex-row  md:space-x-8">
+        <div className="flex flex-col items-center justify-center pt-2 pb-4 md:gap-4">
           {Object.entries(options).map(([key, value]) => {
             return (
               <div
                 key={key}
-                className={`m-2 flex cursor-pointer rounded-lg bg-neutral p-2 transition ease-in-out ${
+                className={`m-2 flex cursor-pointer rounded-xl bg-white p-4 transition ease-in-out hover:scale-105 hover:shadow-sm ${
                   choice[question?.type] == key
-                    ? "scale-105 border-4 border-primary bg-opacity-70"
-                    : "fff"
+                    ? "scale-105 border-4 border-primary bg-opacity-70 shadow-sm "
+                    : ""
                 }`}
                 onClick={() => {
-                  console.log(key);
                   const obj: any = {};
                   obj[question?.type] = key;
                   setChoice(obj);
                 }}
               >
                 {value.map((c: string) => (
-                  <div className="relative mx-1 h-32 w-20" key={c}>
+                  <div
+                    className="relative mx-1 h-24  w-16 sm:h-40 sm:w-32 md:h-24 md:w-16 lg:h-32 lg:w-24"
+                    key={c}
+                  >
                     <Image
                       src={`/imgs/${question?.type}/${c}.png`}
                       alt={c}
@@ -79,10 +81,10 @@ const AnswerPanel = ({ question, next }: AnswerPanelProps) => {
           })}
         </div>
       ) : (
-        <ThreeDots fill="#e7e5db" width="80" />
+        <LoadingIndicator />
       )}
-      {choice != null && (
-        <Button text={"Next"} onClick={() => next(choice)}></Button>
+      {Object.keys(choice).length !== 0 && (
+        <Button text={"Next Task"} onClick={() => next(choice)}></Button>
       )}
     </div>
   );
