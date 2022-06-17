@@ -13,12 +13,16 @@ const Home: NextPage = () => {
   const [uid, setUid] = useState<string>("");
 
   const startTheSurvey = async () => {
+    const now = Math.floor(Date.now() / 1000);
+    console.log(now);
     const { data, error } = await supabase.from("workers").insert([
       {
         study: null,
         work: null,
         travel: null,
         home: null,
+        start_timestamp: now,
+        end_timestamp: null,
       },
     ]);
     if (data != null) {

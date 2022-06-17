@@ -45,13 +45,13 @@ const Subject = ({
                 {s.id}
               </span>
             </div>
-            <div className="my-2 text-center font-light ">{s.caption}</div>
+            <div className="my-2 text-center text-sm font-light ">
+              {s.caption}
+            </div>
           </div>
         ))}
       </div>
-      <div className={`${isDoneReading ? "invisible" : "block"}`}>
-        <Button text={"Done"} onClick={setIsDoneReading} />
-      </div>
+      {!isDoneReading && <Button text={"Done"} onClick={setIsDoneReading} />}
     </>
   ) : (
     <LoadingIndicator />
