@@ -33,8 +33,8 @@ const Subject = ({
       >
         {photos?.map((s) => (
           <Zoom key={`${question?.type}-${s.id}`}>
-            <div className=" flex flex-col items-center  md:h-60 ">
-              <div className="relative h-40 w-full">
+            <div className=" flex w-full flex-col  items-center md:h-60 ">
+              <div className="relative h-40 w-full ">
                 <Image
                   src={`/imgs/${question?.type}/${s.id}.png`}
                   alt={s.caption}
@@ -45,6 +45,7 @@ const Subject = ({
                   {s.id}
                 </span>
               </div>
+
               <div className="my-2 text-center text-sm font-light ">
                 {s.caption}
               </div>
