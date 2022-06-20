@@ -45,12 +45,19 @@ const AnswerPanel = ({ question, next }: AnswerPanelProps) => {
   return (
     <div className="py-8">
       <h2 className="px-8  pb-2">
-        There are 2 photo sets, each containing 3 photos.{" "}
+        If you were to choose 3 photos from the 10 pictures on the left to{" "}
+        <span className="font-semibold">
+          tell your parents/children how you spent the day
+        </span>
+        , which of the following two sets are you{" "}
+        <span className="font-semibold">more likely to choose?</span>
+        {/* There are 2
+        photo sets, each containing 3 photos.{" "}
         <span className="font-bold italic"> Click </span>
         to choose the photo set you want to share if you want to{" "}
         <span className="font-semibold">
           tell others about how you spent the day.{" "}
-        </span>
+        </span> */}
       </h2>
       {options != null ? (
         <div className="flex flex-col items-center justify-center pt-2 pb-4 md:gap-4">
