@@ -75,8 +75,9 @@ const QuestionsPage = ({ done, uid }: QuestionsPageProps) => {
     }
     return (
       <>
-        Here are 10 pictures collected from {person}&apos;s mobile album during
-        a single day. Take a look at at these pictures and captions, and{" "}
+        Here are 10 pictures collected from{" "}
+        <span className="font-semibold">{person}&apos;s</span> mobile album
+        during a single day. Take a look at at these pictures and captions, and{" "}
         <span className="font-semibold">imagine your day like this.</span>
       </>
     );

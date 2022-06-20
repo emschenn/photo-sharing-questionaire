@@ -51,13 +51,6 @@ const AnswerPanel = ({ question, next }: AnswerPanelProps) => {
         </span>
         , which of the following two sets are you{" "}
         <span className="font-semibold">more likely to choose?</span>
-        {/* There are 2
-        photo sets, each containing 3 photos.{" "}
-        <span className="font-bold italic"> Click </span>
-        to choose the photo set you want to share if you want to{" "}
-        <span className="font-semibold">
-          tell others about how you spent the day.{" "}
-        </span> */}
       </h2>
       {options != null ? (
         <div className="flex flex-col items-center justify-center pt-2 pb-4 md:gap-4">
